@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        width: 90%;
+        margin-right: 5%;
+        margin-left: 5%;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+
+      
+      
+    <script>
+
+var map;
+
+function initialize() {
+  var mapOptions = {
+    zoom: 16
+  };
+  map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+
+  // Try HTML5 geolocation
+if(navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = new google.maps.LatLng(position.coords.latitude,
+                                       position.coords.longitude);
+        //googles position thing just makes me think of piece of shit
+        var myLatlng0 = new google.maps.LatLng(45.424007,-75.698371);
+        
+        var myLatlng2 = new google.maps.LatLng(45.431002,-75.717890);
+        var myLatlng3 = new google.maps.LatLng(45.414007,-75.688371);
+        var myLatlng4 = new google.maps.LatLng(45.404007,-75.608371);
+        var myLatlng5 = new google.maps.LatLng(45.304007,-75.808371);
+        var myLatlng6 = new google.maps.LatLng(45.364007,-75.758371);
+        var myLatlng7 = new google.maps.LatLng(45.394007,-75.758371);
+        var myLatlng8 = new google.maps.LatLng(45.364007,-75.608371);
+        var myLatlng9 = new google.maps.LatLng(45.294007,-75.758371);
+
+
+        
+        map.setCenter(pos);
+        map.setMapTypeId(google.maps.MapTypeId.HYBRID);
+        
+        var marker0 = new google.maps.Marker({
+        position: myLatlng0,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png',  
+        title: 'Bob Smith',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker1 = new google.maps.Marker({
+        position: pos,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',  
+        title: 'Dan Maslen',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker2 = new google.maps.Marker({
+        position: myLatlng2,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/red-dot.png',  
+        title: 'Name2',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker3 = new google.maps.Marker({
+        position: myLatlng3,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/purple-dot.png',  
+        title: 'Name3',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker4 = new google.maps.Marker({
+        position: myLatlng4,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/pink-dot.png',  
+        title: 'name4',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker5 = new google.maps.Marker({
+        position: myLatlng5,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/orange-dot.png',  
+        title: 'name5',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker6 = new google.maps.Marker({
+        position: myLatlng6,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png',  
+        title: 'name6',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker7 = new google.maps.Marker({
+        position: myLatlng7,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/red-dot.png',  
+        title: 'name7',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker8 = new google.maps.Marker({
+        position: myLatlng8,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',  
+        title: 'name8',
+        animation: google.maps.Animation.BOUNCE
+        });
+        var marker9 = new google.maps.Marker({
+        position: myLatlng9,
+        map: map,
+        icon:'http://maps.google.com/mapfiles/ms/icons/green-dot.png',  
+        title: 'name9',
+        animation: google.maps.Animation.BOUNCE
+        });
+
+    }, 
+    function() {
+        handleNoGeolocation(true);
+    });
+  } 
+else {
+    // Browser doesn't support Geolocation
+    handleNoGeolocation(false);
+}
+}
+      
+
+function handleNoGeolocation(errorFlag) {
+  if (errorFlag) {
+    var content = 'Error: The Geolocation service failed.';
+  } else {
+    var content = 'Error: Your browser doesn\'t support geolocation.';
+  }
+
+  var options = {
+    map: map,
+    position: new google.maps.LatLng(60, 105),
+    content: content
+  };
+
+  var infowindow = new google.maps.InfoWindow(options);
+  map.setCenter(options.position);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+        
+        
+        
+
+    </script>
+      
+      
+      
+  </head>
+  <body>
+    <button type="button"> <a href="index.html">Home</a> </button>  
+    <div id="map-canvas"></div>
+  </body>
+</html>
