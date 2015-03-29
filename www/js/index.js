@@ -22,34 +22,35 @@ function onDeviceReady() {
 
         function onSuccess(contacts) {
             document.getElementById("contact1").innerHTML = 
-                "Name: " + contacts[0].name.formatted + "<br>" + "Phone #: " + contacts[0].phoneNumbers[0].value;
+                "Name: " + contacts[0].name.formatted;
+                //+ "<br>" + "Phone #: " + contacts[0].phoneNumbers[0].value;
 
             document.getElementById("contact2").innerHTML = 
-                "Name: " + contacts[1].name.formatted + "<br>" + "Phone #: " + contacts[1].phoneNumbers[0].value;
+                "Name: " + contacts[1].name.formatted;
             
             document.getElementById("contact3").innerHTML = 
-                "Name: " + contacts[2].name.formatted + "<br>" + "Phone #: " + contacts[2].phoneNumbers[0].value;
+                "Name: " + contacts[2].name.formatted;
             
             document.getElementById("contact4").innerHTML = 
-                "Name: " + contacts[3].name.formatted + "<br>" + "Phone #: " + contacts[3].phoneNumbers[0].value;
+                "Name: " + contacts[3].name.formatted;
             
             document.getElementById("contact5").innerHTML = 
-                "Name: " + contacts[4].name.formatted + "<br>" + "Phone #: " + contacts[4].phoneNumbers[0].value;
+                "Name: " + contacts[4].name.formatted;
             
             document.getElementById("contact6").innerHTML = 
-                "Name: " + contacts[5].name.formatted + "<br>" + "Phone #: " + contacts[5].phoneNumbers[0].value;
+                "Name: " + contacts[5].name.formatted;
             
             document.getElementById("contact7").innerHTML = 
-                "Name: " + contacts[6].name.formatted + "<br>" + "Phone #: " + contacts[6].phoneNumbers[0].value;
+                "Name: " + contacts[6].name.formatted;
             
             document.getElementById("contact8").innerHTML = 
-                "Name: " + contacts[7].name.formatted + "<br>" + "Phone #: " + contacts[7].phoneNumbers[0].value;
+                "Name: " + contacts[7].name.formatted;
             
             document.getElementById("contact9").innerHTML = 
-                "Name: " + contacts[8].name.formatted + "<br>" + "Phone #: " + contacts[8].phoneNumbers[0].value;
+                "Name: " + contacts[8].name.formatted;
             
             document.getElementById("contact10").innerHTML = 
-                "Name: " + contacts[9].name.formatted + "<br>" + "Phone #: " + contacts[9].phoneNumbers[0].value;
+                "Name: " + contacts[9].name.formatted;
             
             
             var newcontact0 = {id: (contacts[0].id), 
@@ -115,21 +116,70 @@ function onDeviceReady() {
             
             
             
-            localStorage.setItem("masl0016 conts", JSON.stringify(conts));
+            localStorage.setItem("masl0016c", JSON.stringify(conts));
             
             console.log(conts)
             
             console.log(conts[0].id)
             
+            console.log(conts[9].id)
             
+/////////////////////////////////////////////////////////////////
+             
+            document.getElementById("n1").innerHTML = contacts[0].name.formatted;
+            document.getElementById("#1").innerHTML = 
+                "Phone #: " + contacts[0].phoneNumbers[0].value;
+            document.getElementById("loc1").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
             
-            if (localStorage.getItem("masl0016 conts"))
-            {
-                conts = localStorage.getItem("masl0016 conts", JSON.parse(conts));
-            }
+            document.getElementById("n2").innerHTML = contacts[1].name.formatted;
+            document.getElementById("#2").innerHTML = 
+                "Phone #: " + contacts[1].phoneNumbers[0].value;
+            document.getElementById("loc2").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
             
+            document.getElementById("n3").innerHTML = contacts[2].name.formatted;
+            document.getElementById("#3").innerHTML = 
+                "Phone #: " + contacts[2].phoneNumbers[0].value;
+            document.getElementById("loc3").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
             
+            document.getElementById("n4").innerHTML = contacts[3].name.formatted;
+            document.getElementById("#4").innerHTML = 
+                "Phone #: " + contacts[3].phoneNumbers[0].value;
+            document.getElementById("loc4").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
+            
+            document.getElementById("n5").innerHTML = contacts[4].name.formatted;
+            document.getElementById("#5").innerHTML = 
+                "Phone #: " + contacts[4].phoneNumbers[0].value;
+            document.getElementById("loc5").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
+            
+            document.getElementById("n6").innerHTML = contacts[5].name.formatted;
+            document.getElementById("#6").innerHTML = 
+                "Phone #: " + contacts[5].phoneNumbers[0].value;
+            document.getElementById("loc6").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
+            
+            document.getElementById("n7").innerHTML = contacts[6].name.formatted;
+            document.getElementById("#7").innerHTML = 
+                "Phone #: " + contacts[6].phoneNumbers[0].value;
+            document.getElementById("loc7").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
+            
+            document.getElementById("n8").innerHTML = contacts[7].name.formatted;
+            document.getElementById("#8").innerHTML = 
+                "Phone #: " + contacts[7].phoneNumbers[0].value;
+            document.getElementById("loc8").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
+            
+            document.getElementById("n9").innerHTML = contacts[8].name.formatted;
+            document.getElementById("#9").innerHTML = 
+                "Phone #: " + contacts[8].phoneNumbers[0].value;
+            document.getElementById("loc9").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
+            
+            document.getElementById("n10").innerHTML = contacts[9].name.formatted;
+            document.getElementById("#10").innerHTML = 
+                "Phone #: " + contacts[9].phoneNumbers[0].value;
+            document.getElementById("loc10").innerHTML = "Lat: " + conts[0].lat + "<br>" + "Lng: " + conts[0].lng;
+            
+
         }
+
+            
             // onError: Failed to get the contacts
 
             function onError(contactError) {
